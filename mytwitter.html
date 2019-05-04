@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1" />
+    <title>Twitter-demo | WWW-tekniikat, TAMK</title>
+
+    <!-- Ladataan fonttitiedostot verkosta sekä ulkoiset tyylitiedostot -->
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Exo+2|Prompt" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="only screen and (min-width:50px) and (max-width:800px)" href="css/screen_layout_medium.css" />
+    <link rel="stylesheet" type="text/css" media="only screen and (min-width:800px)" href="css/screen_layout_large.css" />
+
+    <!-- Ladataan javascript-tiedostot, jotka muokaavat sivun sisältöä navigaatiolinkkejä painettaessa-->
+    <script>
+        // Funktio vaihtaa sivun näkymään www-näyttötyö -osion
+        function f1() {
+            document.getElementById("test").style.display = "none";
+            document.getElementById("homepage").style.display = "none";
+            document.getElementById("realtwitter").style.display = "none";
+            document.getElementById("articleH1").innerHTML = "WWW-näyttötyö";
+            document.getElementById("articlep").innerHTML = "Tämä sivusto on www-tekniikka -kurssin näyttötyö. Navigaatiopalkista pääset navigoimaan sivustolla.<br /><b>Mikä on twitter?</b> -sivulla kerrotaan tietoa palvelusta.<br /><b>Testaa-tweettaamista</b> -sivulla voit kokeilla tweettaamista!<br /><b>Yhteystiedot</b>-sivulta löydät tekijän yhteystiedot ja kotisivut.";
+            document.getElementById("articlep").style.textAlign = 'left';
+        }
+        // Funktio vaihtaa sivun näkymään tieto-osion
+        function f2() {
+            document.getElementById("test").style.display = "none";
+            document.getElementById("homepage").style.display = "none";
+            document.getElementById("realtwitter").style.display = "block";
+            document.getElementById("articleH1").innerHTML = "Mikä on Twitter?";
+            document.getElementById("articlep").innerHTML = "Twitter on yhteisö- ja mikroblogipalvelu, jonka käyttäjät pystyvät lähettämään ja lukemaan toistensa päivityksiä internetissä. Tekstipohjaiset viestit eli tviitit (tai twiitit), voivat sisältää korkeintaan 280 merkkiä, paitsi japanin-, korean- ja kiinankieleisillä käyttäjillä, joilla on edelleen käytössään 140 merkkiä. Käyttäjien on mahdollista lähettää ja vastaanottaa päivityksiä Twitter-verkkosivuston kautta, tekstiviesteinä, RSS-syötteenä tai erilaisten sovellusten kautta. Palvelun käyttö internetissä on maksutonta.<br />Twitter julkistettiin vuonna 2006, ja vuonna 2017 sillä oli arviolta 330 miljoonaa aktiivista käyttäjää. [Wikipedia, 4.5.2019]<br /><br />Käy kurkkaa Twitter-opasta alla olevasta linkistä:";
+            document.getElementById("articlep").style.textAlign = 'left';
+            document.getElementById("homepage").href = "http:/twitter.com";
+        }
+        // Funktio vaihtaa sivun näkymään tweettiosion
+        function f3() {
+            document.getElementById("test").style.display = "block";
+            document.getElementById("homepage").style.display = "none";
+            document.getElementById("realtwitter").style.display = "none";
+            document.getElementById("articleH1").innerHTML = "Testaa tweettaamista";
+            document.getElementById("articlep").innerHTML = "Testaa tweettaamista alla olevalla lomakkeella.";
+            document.getElementById("articlep").style.textAlign = 'center';
+        }
+        // Funktio vaihtaa sivun näkymään yhteystiedot
+        function f4() {
+            document.getElementById("test").style.display = "none";
+            document.getElementById("homepage").style.display = "block";
+            document.getElementById("realtwitter").style.display = "none";
+            document.getElementById("articleH1").innerHTML = "Yhteystiedot";
+            document.getElementById("articlep").innerHTML = "Tommi Mäkeläinen<br />email: tommi.makelainen@tuni.fi<br />puh: 0504303043<br />";
+            document.getElementById("articlep").style.textAlign = 'left';
+        }
+        // tweet()-funktio lisää sivulle uuden tweetin
+        function tweet() {
+            var para = document.createElement("P");
+            para.style.backgroundColor = 'white';
+            para.style.padding = '5px';
+            para.style.border = '5px dashed black';
+            para.style.color = 'black';
+            var d = new Date();
+            var x = "Tweettasit "+ d.toLocaleDateString() +  " kello " + d.toTimeString().split(' ')[0] + "<br />";
+            para.innerHTML = x + document.getElementById("tweettext").value;
+            document.getElementById("twiits").appendChild(para);
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="page">
+        <header>
+        </header>
+        <!-- Navigaatiopalkin linkit käynnistävät tietyt funktiot -->
+        <nav>
+            <a id="about" onclick="f1()">WWW-näyttötyö</a>
+            <a onclick="f2()">Mikä on Twitter?</a>
+            <a onclick="f3()">Testaa tweettaamista</a>
+            <a onclick="f4()">Yhteystiedot</a>
+        </nav>
+        <!-- Sivun sisältö -->
+        <div class="pagecontent">
+            <article>
+                <h1 id="articleH1">Twitter-demo</h1>
+                <p id="articlep">Tervetuloa etusivulle!<br />Klikkaa navigaatiopalkin painikkeista päästäksesi tarkastelemaan sivustoa.</p>
+                <a id="homepage" href="http://koti.tamk.fi/~c8tomake/" style="display: none;">Tekijän kotisivulle</a>
+                <a id="realtwitter" href="https://media.twitter.com/en_us/twitter-basics.html" style="display: none;">Ota twitter haltuun!</a>
+            </article>
+            <!-- Twiittausosio -->
+            <div class="promo_container" id="test" style="display:none;">
+                <div class="main-tweet-box">
+                    <div class="tweet-box">
+                        <div class="tweet-box-title">
+                            <h2>Uusi Tweetti</h2>
+                        </div>
+                        <div class="text-area twttr-editor">
+                            <!-- Tekstikenttä tweetille -->
+                            <textarea style="width: 80%; height: 36px;" class="twitter-anywhere-tweet-box-editor"
+                                id="tweettext"></textarea>
+                        </div>
+                        <div class="tweet-button-container">
+                            <!-- Tweettauksen Lähetä-nappi -->
+                            <button class="tweet-button" onclick="tweet()">Tweet!</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Alla olevaan div-elementtiin lisätään uudet tweetit -->
+                <div id="twiits"></div>
+            </div>
+        </div>
+        <!-- Sivun alatunniste -->
+        <footer>
+            <p>Tommi Mäkeläinen</p>
+            <p>WWW-tekniikat, TAMK</p>
+        </footer>
+    </div>
+</body>
+
+</html>

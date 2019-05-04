@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+/* Tämä tyylitiedosto on käytössä, kun näytön koko on korkeintaan 900px */
+
+/* Kaikilla html-elementeillä on käytössä border-box asetus */
+* {
+    box-sizing: border-box;
+}
+
+/* Headerin tyylit */
+header {
+	height: 230px;
+	background: url(../images/cloudbane.png) no-repeat center 0px;
+}
+
+/* Sivun yleiset tyylit */
+body {
+	margin:0px;
+	padding:0px;
+	color: #575c7a;
+	line-height: 1.5em;
+    font-family: 'Exo 2';
+	font-size: 20px;
+	background: #1DA1F2 url(../images/background_gradient.jpg) repeat-x 0px 0px;
+}
+
+/* page-luokkaisen elementin tausta valkoiseksi */
+.page {
+	background-color: #ffffff;
+}
+
+/* Navigaatiopalkin tyylit */
+nav {
+	padding: 10px 0px 10px 0px;
+	background-color: rgb(12, 71, 107);
+}
+/* Navigaatiopalkin linkkien tyylit */
+nav a { 
+    font-family: 'Prompt';
+	text-decoration: none;
+	font-weight: bold;
+	font-size: .9em;
+	color:white;
+	display: block;
+	margin: 15px;
+	padding: 9px;
+	border: 1px solid #a6abc5;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+}
+/* Navigaatiopalkin linkkien tyylit kun hiiri on linkin päällä*/
+nav a:hover { 
+	color: #fff; 
+    background-color:  #009eff;
+}
+
+/* Otsikkoelementtien tyylit */
+h1 { text-align:center; line-height:1.8em; padding: 20px; color: rgb(12, 71, 107); margin: 0em 0em .5em 0em; font-size: 2em; font-family: 'Pacifico';}
+h2 { color: white; font-size: 1.5em; margin: 0em 0em 1em 0em; font-family: 'Pacifico';}
+h3 { color: rgb(12, 71, 107); font-size: 1.5em; margin: 0em 0em 1em 0em; font-family: 'Pacifico';}
+
+/* p-elementille säädetään vain marginaaliasetuksia */
+p { margin: 0px 0px .75em 0px; }
+
+/* article-elementille säädetään tilaa ympärille */
+article { padding: 20px 20px 10px 20px; }
+
+/* Muiden a-elementtien tyylit */
+a { color: #009eff; text-decoration:none}
+a:hover { color: rgb(12, 71, 107); }
+
+/* pagecontent-luokkaisen elementin tyylit */
+.pagecontent {
+    font-family: 'Helvetica';
+    background-color:white;
+    color: #575c7a;
+}
+
+/* .main-tweet-box-luokkaisen elementin tyylit */
+.main-tweet-box {
+    border-radius: 30px 30px 30px 0px;
+    width: 80%;
+    margin: 0% auto;
+    background: #009eff;
+    padding: 20px;
+    height: 170px;  
+}
+
+/* twiits-identiteettisen elementin tyylit */
+#twiits {
+    border-radius: 30px 30px 30px 0px;
+    padding: 30px;
+}
+
+/* tweettaus-napin tyylit */
+.tweet-button {
+    color: rgb(12, 71, 107);
+    padding: 5px;
+}
+
+/* Alatunnisteen tyylit */
+footer { font-size: .85em; color: #9ba0bd; background-color: rgb(12, 71, 107); padding: 10px; text-align:center;}
